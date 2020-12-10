@@ -2,11 +2,11 @@
 import React from 'react'
 import {View,StyleSheet, SafeAreaView} from 'react-native'
 import ToolBar from '../widgets/toolbar'
-class MainPage extends React.Component{
+class HomePage extends React.Component{
     render(){
         return(
             <SafeAreaView>
-                    <ToolBar titleName='主页'></ToolBar>
+                    <ToolBar titleName='主页' menuShow={false}></ToolBar>
 
             </SafeAreaView>
         )
@@ -20,4 +20,4 @@ const styles=StyleSheet.create({
 
 })
 
-export default MainPage
+export default HomePage

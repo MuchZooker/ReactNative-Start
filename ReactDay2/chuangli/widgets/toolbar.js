@@ -6,7 +6,10 @@ class ToolBar extends React.Component{
     render(){
         return(
             <View style={styles.toolbar}>
-                <Text style={styles.callBack}>返回</Text>
+                  {
+                    this.props.menuShow==false?(null):(  <Text style={styles.callBack}>返回</Text>)
+                }
+               
                 <Text style={styles.title}>{this.props.titleName}</Text>
                 {
                     this.props.menuShow==false?(null):( <Text style={styles.rightMenu}>菜单</Text>)
@@ -20,7 +23,7 @@ class ToolBar extends React.Component{
 
 const styles=StyleSheet.create({
         toolbar:{
-            height:80,
+            height:70,
             backgroundColor:'#1593fa',
             paddingTop:20,
             flexDirection:"row",
@@ -36,7 +39,7 @@ const styles=StyleSheet.create({
         title:{
             color:'#fff',
             flex:1,
-            fontSize:22,
+            fontSize:20,
             textAlign:"center",
             textAlignVertical:"center"
             

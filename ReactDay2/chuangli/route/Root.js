@@ -1,7 +1,8 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import LoginPage from './chuangli/pages/login'
-import MainPage from './chuangli/pages/main'
+import LoginPage from '../pages/login'
+// import MainPage from '../pages/main'
+import MainPage from '../route/Main'
 
 
 const RootStack = createStackNavigator(

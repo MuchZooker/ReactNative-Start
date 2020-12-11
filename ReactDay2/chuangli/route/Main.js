@@ -31,7 +31,7 @@ class MainPage extends React.Component{
                     }}
                 >
                     {
-                        <HomePage navigator={this.props.navigator}></HomePage>
+                        <HomePage navigation={this.props.navigation}></HomePage>
                     }
                 </TabNavigator.Item>
 
@@ -49,7 +49,7 @@ class MainPage extends React.Component{
                     }}
                 >
                     {
-                        <NavigationPage navigator={this.props.navigator}></NavigationPage>
+                        <NavigationPage navigation={this.props.navigation}></NavigationPage>
                     }
                 </TabNavigator.Item>
 
@@ -67,7 +67,7 @@ class MainPage extends React.Component{
                     }}
                 >
                     {
-                        <MySelfPage navigator={this.props.navigator}></MySelfPage>
+                        <MySelfPage navigation={this.props.navigation}></MySelfPage>
                     }
                 </TabNavigator.Item>
             </TabNavigator>

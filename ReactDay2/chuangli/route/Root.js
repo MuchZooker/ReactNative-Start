@@ -1,5 +1,6 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
+import CodePage from '../pages/code/code';
 import LoginPage from '../pages/login'
 // import MainPage from '../pages/main'
 import MainPage from '../route/Main'
@@ -13,6 +14,9 @@ const RootStack = createStackNavigator(
         Main:{
             screen:MainPage
         },
+        Code:{
+            screen:CodePage
+        }
         //-------------------
     },
     {

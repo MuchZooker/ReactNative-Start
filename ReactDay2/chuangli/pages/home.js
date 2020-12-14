@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { View, StyleSheet, SafeAreaView, Text, ScrollView, Image, Dimensions, TouchableHighlight } from 'react-native'
+import { View, StyleSheet, SafeAreaView, Text, ScrollView, Image, Dimensions, TouchableHighlight ,NativeModules} from 'react-native'
 import ToolBar from '../widgets/toolbar'
 
 
@@ -23,7 +23,9 @@ const MainTabModel = (props) => {
 
     switch(position){
         case 0:
-            props.navigation.navigate('Code')
+            
+            NativeModules.JsIntent.startActivity('CodeActivity')
+            // props.navigation.navigate('Code')
         break
         default:
 
@@ -45,7 +47,8 @@ const MainTabModel = (props) => {
                 <Image style={{ width: 18, height: 18, marginTop: 10 }} source={props.data.img}></Image>
                 <Text style={{ paddingTop: 5, paddingBottom: 10 }}>{props.data.title}</Text>
             </View>
-        </TouchableHighlight>)
+        </TouchableHighlight>
+        )
 }
 
 class HomePage extends React.Component {
@@ -88,7 +91,7 @@ class HomePage extends React.Component {
                     </View>
 
                     <View style={{ backgroundColor: '#fff' }}>
-                        <Text style={{ fontSize: 18, padding: 10, color: '#1593fa', fontWeight: "bold" }}>智能服务</Text>
+                        {/* <Text style={{ fontSize: 18, padding: 10, color: '#1593fa', fontWeight: "bold" }}>智能服务</Text> */}
                         <View style={{ flexDirection: 'row', flexWrap: "wrap" }}>
 
                             {
@@ -109,13 +112,14 @@ class HomePage extends React.Component {
 
 const styles = StyleSheet.create({
     back: {
-
+            
     },
 
 
     maintab_model_back: {
-        width: width1
-        , alignItems: "center"
+        width: width1,
+         alignItems: "center"
+        // ,flex:1
     }
 })
 

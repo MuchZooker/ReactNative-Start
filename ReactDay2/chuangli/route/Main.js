@@ -16,7 +16,7 @@ class MainPage extends React.Component{
 
     render(){
         return(
-            <TabNavigator>
+            <TabNavigator tabBarStyle={{backgroundColor:'#fff'}}>
                 <TabNavigator.Item
                     title='首页'
                     selected={this.state.select=='home'}

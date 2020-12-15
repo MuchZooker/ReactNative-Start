@@ -8,12 +8,34 @@ var width1 = Dimensions.get('window').width / 4
 
 const MainTabTop = (props) => {
 
+    function clickItem(position){
+
+        switch(position){
+            case 1:
+                // NativeModules.JsBlueTooth.startScanBueTooth((data)=>{
+                //         console.log(data);
+                // })
+                props.navigation.navigate('Ble')
+            break
+            default:
+                // alert(position)
+                NativeModules.JsIntent.showToast(position+'')
+            break
+        }
+    
+        }
 
 
-    return (<View style={{ flex: 1, alignItems: "center" }}>
+    return (
+        <TouchableHighlight 
+        style={styles.maintab_model_back}
+        onPress={() => clickItem(props.posi)}
+        underlayColor='#f3f3f3'>
+    <View style={{ flex: 1, alignItems: "center" }}>
         <Image style={{ width: 34, height: 34, marginTop: 10 }} source={props.data.img}></Image>
         <Text style={{ paddingTop: 5, paddingBottom: 10 }}>{props.data.title}</Text>
-    </View>)
+    </View>
+    </TouchableHighlight>)
 }
 
 
@@ -23,13 +45,13 @@ const MainTabModel = (props) => {
 
     switch(position){
         case 0:
-            
+            //android原生需要编写兼容
             NativeModules.JsIntent.startActivity('CodeActivity')
             // props.navigation.navigate('Code')
         break
         default:
-
-            alert(position)
+            // alert(position)
+            NativeModules.JsIntent.showToast(position+'')
         break
     }
 
@@ -64,11 +86,9 @@ class HomePage extends React.Component {
         const mainTabmodelData = [{ title: '编码', img: require('../../res/index_bian.png') }
             , { title: '审批', img: require('../../res/index_shen.png') }
             , { title: '日志', img: require('../../res/index_ri.png') }
-            , { title: '钥匙', img: require('../../res/index_yao.png') },
-
-            , { title: '统计', img: require('../../res/index_chart.png') },
-
-            , { title: '维修', img: require('../../res/index_wei.png') },
+            , { title: '钥匙', img: require('../../res/index_yao.png') }
+            , { title: '统计', img: require('../../res/index_chart.png') }
+            , { title: '维修', img: require('../../res/index_wei.png') }
 
         ]
         return (
@@ -80,7 +100,7 @@ class HomePage extends React.Component {
                     <View style={{ flexDirection: 'row', backgroundColor: '#fff' }}>
                         {
                             mainTabTopData.map((item, index) => {
-                                return (<MainTabTop key={index} data={item}></MainTabTop>)
+                                return (<MainTabTop navigation={this.props.navigation} key={index} posi={index} data={item}></MainTabTop>)
                             })
                         }
                     </View >

@@ -5,6 +5,7 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.reactday2.module.Js2IntentModule;
+import com.reactday2.module.JsBlueToothModule;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,7 +17,7 @@ public class Js2IntentPack implements ReactPackage {
     @NonNull
     @Override
     public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new Js2IntentModule(reactContext));
+        return Arrays.<NativeModule>asList(new Js2IntentModule(reactContext),new JsBlueToothModule(reactContext));
     }
 
     @NonNull

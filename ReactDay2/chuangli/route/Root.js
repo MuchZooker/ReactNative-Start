@@ -4,6 +4,7 @@ import CodePage from '../pages/code/code';
 import LoginPage from '../pages/login'
 // import MainPage from '../pages/main'
 import MainPage from '../route/Main'
+import BlePage from '../pages/ble/ble'
 
 
 const RootStack = createStackNavigator(
@@ -16,6 +17,9 @@ const RootStack = createStackNavigator(
         },
         Code:{
             screen:CodePage
+        },
+        Ble:{
+            screen:BlePage
         }
         //-------------------
     },

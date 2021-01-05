@@ -46,8 +46,8 @@ const MainTabModel = (props) => {
     switch(position){
         case 0:
             //android原生需要编写兼容
-            NativeModules.JsIntent.startActivity('CodeActivity')
-            // props.navigation.navigate('Code')
+            // NativeModules.JsIntent.startActivity('CodeActivity')
+            props.navigation.navigate('Code')
         break
         default:
             // alert(position)
